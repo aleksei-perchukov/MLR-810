@@ -19,7 +19,7 @@ public class TestReadMore extends TestBase {
 
     @Tag("DesktopTests")
     @CsvFileSource (files = writeCSVPathDesktop)
-    @ParameterizedTest (name = "{0}{1} contains 'READ MORE' on DESKTOP (1280x1024)")
+    @ParameterizedTest (name = "{0}{1} contains 'READ MORE' on DESKTOP (1920x1080)")
     void readMore_desktop (String storePrefix, String url_path) {
         Configuration.browserSize = desktopResolution;
         TestMore.readMore(storePrefix, url_path);

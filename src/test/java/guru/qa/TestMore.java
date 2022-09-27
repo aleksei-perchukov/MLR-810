@@ -7,7 +7,7 @@ import static io.qameta.allure.Allure.step;
 
 public class TestMore {
 
-    static void readMore (String storePrefix, String url_path) {
+    static void readMore(String storePrefix, String url_path) {
         step("Open " + storePrefix + url_path + " URL", () -> open(storePrefix + url_path + ".html"));
         step("Assert that 'Read more' button is visible", () -> {
             $(".category-description-wrapper").$(".readmore").shouldBe(visible);
@@ -17,5 +17,5 @@ public class TestMore {
             $(".category-description-wrapper").$(".readless").shouldBe(visible);
         });
         step("Click on 'Read less' button", () -> $(".category-description-wrapper").$(".readless").click());
-        }
+    }
 }
