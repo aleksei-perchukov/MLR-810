@@ -57,3 +57,21 @@ tasks.withType(Test) {
         }
     }
 }
+
+task DesktopTests(type: Test){
+    useJUnitPlatform {
+        includeTags "DesktopTests"
+    }
+}
+
+task MobileTests(type: Test){
+    useJUnitPlatform {
+        includeTags "MobileTests"
+    }
+}
+
+task TabletTests(type: Test){
+    useJUnitPlatform {
+        includeTags "TabletTests"
+    }
+}
