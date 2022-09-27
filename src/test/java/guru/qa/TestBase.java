@@ -6,6 +6,7 @@ import com.opencsv.exceptions.CsvValidationException;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -30,18 +31,19 @@ public class TestBase {
             if (remote != null) {
                 Configuration.remote = "https://user1:1234@" + remote;
             }
-            if (TestReadMore.needToRebaseDesktopCSV = true) {
+            if (TestReadMore.needToRebaseDesktopCSV == "Yes") {
                 newReaderDesktop();
             }
-            if (TestReadMore.needToRebaseMobileCSV = true) {
+            if (TestReadMore.needToRebaseMobileCSV == "Yes") {
                 newReaderMobile();
             }
-            if (TestReadMore.needToRebaseTabletCSV = true) {
+            if (TestReadMore.needToRebaseTabletCSV == "Yes") {
                 newReaderTablet();
             }
     }
 
-    static void addAttachments() {
+    @AfterEach
+    void addAttachments() {
         Attach.screenshotAs("Screenshot");
         Attach.pageSource();
         Attach.browserConsoleLogs();
