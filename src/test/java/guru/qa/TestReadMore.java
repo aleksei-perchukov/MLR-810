@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-public class TestReadMore {
+public class TestReadMore extends TestBase {
     public static final String readCSVPath = "src/test/resources/MLR-810-URLs.csv";
     public static final String writeCSVPathDesktop = "src/test/resources/MLR-810-URLs-Desktop-filtered.csv";
     public static final String writeCSVPathMobile = "src/test/resources/MLR-810-URLs-Mobile-filtered.csv";
@@ -13,9 +13,9 @@ public class TestReadMore {
     public static String desktopResolution = "1920x1080";
     public static String mobileResolution = "390x844";
     public static String tabletResolution = "820x1180";
-    public static Boolean needToRebaseDesktopCSV = Boolean.valueOf(System.getProperty("needToRebaseDesktopCSV"));
-    public static Boolean needToRebaseMobileCSV = Boolean.valueOf(System.getProperty("needToRebaseMobileCSV"));
-    public static Boolean needToRebaseTabletCSV = Boolean.valueOf(System.getProperty("needToRebaseMobileCSV"));
+    public static Boolean needToRebaseDesktopCSV = Boolean.valueOf(System.getProperty("RebaseDesktopCSV"));
+    public static Boolean needToRebaseMobileCSV = Boolean.valueOf(System.getProperty("RebaseMobileCSV"));
+    public static Boolean needToRebaseTabletCSV = Boolean.valueOf(System.getProperty("RebaseTabletCSV"));
 
     @Tag("DesktopTests")
     @CsvFileSource (files = writeCSVPathDesktop)
