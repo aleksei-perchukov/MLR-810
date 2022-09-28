@@ -7,8 +7,7 @@ import com.opencsv.exceptions.CsvValidationException;
 
 import java.io.*;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 import static guru.qa.TestReadMore.*;
 
 public class ProgramCSV {
@@ -87,6 +86,7 @@ public class ProgramCSV {
                  }
              }
          }
+        closeWindow();
     }
 
     public static void newReaderMobile() throws CsvValidationException, IOException {
@@ -132,6 +132,7 @@ public class ProgramCSV {
                  }
              }
          }
+        closeWindow();
     }
 
     public static void newReaderTablet() throws CsvValidationException, IOException {
@@ -177,6 +178,7 @@ public class ProgramCSV {
                  }
              }
          }
+
     }
 }
 

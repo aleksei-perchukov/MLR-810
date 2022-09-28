@@ -16,6 +16,9 @@ public class TestReadMore extends TestBase {
     public static String needToRebaseDesktopCSV = System.getProperty("RebaseDesktopCSV");
     public static String needToRebaseMobileCSV = System.getProperty("RebaseMobileCSV");
     public static String needToRebaseTabletCSV = System.getProperty("RebaseTabletCSV");
+//    public static String needToRebaseDesktopCSV = "Yes";
+//    public static String needToRebaseMobileCSV = "Yes";
+//    public static String needToRebaseTabletCSV = "Yes";
 
     @Tag("DesktopTests")
     @CsvFileSource (files = writeCSVPathDesktop)

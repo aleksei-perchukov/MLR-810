@@ -12,6 +12,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.IOException;
 
+import static com.codeborne.selenide.Selenide.closeWindow;
 import static guru.qa.ProgramCSV.*;
 
 public class TestBase {
@@ -50,6 +51,7 @@ public class TestBase {
         if (remote != null) {
             Attach.addVideo();
         }
+        closeWindow();
     }
 
     @AfterAll
