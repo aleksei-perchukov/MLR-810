@@ -13,9 +13,9 @@ public class TestReadMore extends TestBase {
     public static String desktopResolution = "1920x1080";
     public static String mobileResolution = "390x844";
     public static String tabletResolution = "820x1180";
-    public static String needToRebaseDesktopCSV = System.getProperty("RebaseDesktopCSV");
-    public static String needToRebaseMobileCSV = System.getProperty("RebaseMobileCSV");
-    public static String needToRebaseTabletCSV = System.getProperty("RebaseTabletCSV");
+//    public static String needToRebaseDesktopCSV = System.getProperty("RebaseDesktopCSV");
+//    public static String needToRebaseMobileCSV = System.getProperty("RebaseMobileCSV");
+//    public static String needToRebaseTabletCSV = System.getProperty("RebaseTabletCSV");
 //    public static String needToRebaseDesktopCSV = "Yes";
 //    public static String needToRebaseMobileCSV = "Yes";
 //    public static String needToRebaseTabletCSV = "Yes";
