@@ -28,7 +28,7 @@ public class TestBase {
         Configuration.browser = System.getProperty("browser_name", "chrome");
         Configuration.browserVersion = System.getProperty("browser_version", "100.0");
         Configuration.browserSize = System.getProperty("browser_size", "1920x1080");
-        Configuration.baseUrl = "https://dev-magento2-migration.mylittleroom.ch/";
+        Configuration.baseUrl = "https://dev.mylittleroom.ch/";
             if (remote != null) {
                 Configuration.remote = "http://139.59.207.235:4444/wd/hub";
             }
