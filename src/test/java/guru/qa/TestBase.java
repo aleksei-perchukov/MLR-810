@@ -30,7 +30,7 @@ public class TestBase {
         Configuration.browserSize = System.getProperty("browser_size", "1920x1080");
         Configuration.baseUrl = "https://dev-magento2-migration.mylittleroom.ch/";
             if (remote != null) {
-                Configuration.remote = "https://user1:1234@" + remote;
+                Configuration.remote = "http://139.59.207.235:4444/wd/hub";
             }
             if (TestReadMore.rebaseCSV == "Yes") {
                 newReaderDesktop();
