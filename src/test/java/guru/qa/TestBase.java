@@ -29,6 +29,7 @@ public class TestBase {
         Configuration.browserVersion = System.getProperty("browser_version", "100.0");
         Configuration.browserSize = System.getProperty("browser_size", "1920x1080");
         Configuration.baseUrl = "https://dev.mylittleroom.ch/";
+        Configuration.remote = "http://139.59.207.235:4444/wd/hub";
             if (remote != null) {
                 Configuration.remote = "http://139.59.207.235:4444/wd/hub";
             }
