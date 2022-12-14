@@ -13,16 +13,16 @@ public class TestReadMore extends TestBase {
     public static String desktopResolution = "1920x1080";
     public static String mobileResolution = "390x844";
     public static String tabletResolution = "820x1180";
-//    public static String needToRebaseDesktopCSV = System.getProperty("RebaseDesktopCSV");
-//    public static String needToRebaseMobileCSV = System.getProperty("RebaseMobileCSV");
-//    public static String needToRebaseTabletCSV = System.getProperty("RebaseTabletCSV");
+    public static String needToRebaseDesktopCSV = System.getProperty("RebaseDesktopCSV");
+    public static String needToRebaseMobileCSV = System.getProperty("RebaseMobileCSV");
+    public static String needToRebaseTabletCSV = System.getProperty("RebaseTabletCSV");
 //    public static String needToRebaseDesktopCSV = "Yes";
 //    public static String needToRebaseMobileCSV = "Yes";
 //    public static String needToRebaseTabletCSV = "Yes";
 
     @Tag("DesktopTests")
     @CsvFileSource (files = writeCSVPathDesktop)
-    @ParameterizedTest (name = "{0}{1} contains 'READ MORE' on DESKTOP (1920x1080)")
+    @ParameterizedTest (name = "{0}{1} page contains 'READ MORE'/'READ LESS' buttons on DESKTOP (1920x1080)")
     void readMore_desktop (String storePrefix, String url_path) {
         Configuration.browserSize = desktopResolution;
         TestMore.readMore(storePrefix, url_path);
@@ -31,7 +31,7 @@ public class TestReadMore extends TestBase {
 
     @Tag("MobileTests")
     @CsvFileSource (files = writeCSVPathMobile)
-    @ParameterizedTest (name = "{0}{1} contains 'READ MORE' on MOBILE (390x844)")
+    @ParameterizedTest (name = "{0}{1} page contains 'READ MORE'/'READ LESS' buttons on MOBILE (390x844)")
     void readMore_mobile (String storePrefix, String url_path) {
         Configuration.browserSize = mobileResolution;
         TestMore.readMore(storePrefix, url_path);
@@ -40,7 +40,7 @@ public class TestReadMore extends TestBase {
 
     @Tag("TabletTests")
     @CsvFileSource (files = writeCSVPathTablet)
-    @ParameterizedTest (name = "{0}{1} contains 'READ MORE' on TABLET (820x1180)")
+    @ParameterizedTest (name = "{0}{1} page contains 'READ MORE'/'READ LESS' buttonson TABLET (820x1180)")
     void readMore_tablet (String storePrefix, String url_path) {
         Configuration.browserSize = tabletResolution;
         TestMore.readMore(storePrefix, url_path);

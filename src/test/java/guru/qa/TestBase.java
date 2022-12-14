@@ -1,6 +1,7 @@
 package guru.qa;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.opencsv.exceptions.CsvValidationException;
 import helpers.Attach;
@@ -12,7 +13,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.IOException;
 
-import static com.codeborne.selenide.Selenide.closeWindow;
+import static guru.qa.ProgramCSV.*;
 
 public class TestBase {
     static String remote = System.getProperty("selenide.remote");
@@ -31,15 +32,15 @@ public class TestBase {
             if (remote != null) {
                 Configuration.remote = "https://user1:1234@" + remote;
             }
-//            if (TestReadMore.needToRebaseDesktopCSV == "Yes") {
-//                newReaderDesktop();
-//            }
-//            if (TestReadMore.needToRebaseMobileCSV == "Yes") {
-//                newReaderMobile();
-//            }
-//            if (TestReadMore.needToRebaseTabletCSV == "Yes") {
-//                newReaderTablet();
-//            }
+            if (TestReadMore.needToRebaseDesktopCSV == "Yes") {
+                newReaderDesktop();
+            }
+            if (TestReadMore.needToRebaseMobileCSV == "Yes") {
+                newReaderMobile();
+            }
+            if (TestReadMore.needToRebaseTabletCSV == "Yes") {
+                newReaderTablet();
+            }
     }
 
     @AfterEach
@@ -47,10 +48,10 @@ public class TestBase {
         Attach.screenshotAs("Screenshot");
         Attach.pageSource();
         Attach.browserConsoleLogs();
-        if (remote != null) {
-            Attach.addVideo();
-        }
-        closeWindow();
+//        if (remote != null) {
+//            Attach.addVideo();
+//        }
+        Selenide.webdriver().driver().getWebDriver().quit();
     }
 
     @AfterAll
